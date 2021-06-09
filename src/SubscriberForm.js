@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function SubscriberForm() {
+function SubscriberForm({ createSubscriber }) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
 
@@ -15,6 +15,7 @@ function SubscriberForm() {
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log('Thanks for your submisison', name, email)
+        createSubscriber({name, email})
         setName('')
         setEmail('')
     }
