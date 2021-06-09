@@ -1,24 +1,17 @@
 import React, { useState } from 'react'
 import './App.css';
-import Header from './Header'
-import Content from './Content'
+import CoinTossCounter from './CoinTossCounter'
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false)
-  const handleLoggedInClick = () => {
-    setLoggedIn(!loggedIn)
-  }
-
-  // console.log("Subscribed Status:", subscribed)
-  // console.log("Alerts Status", alerts)
+  const [results, setResults] = useState([])
+  const [counts, setCounts ] = useState({ H: 0, T: 0})
   return (
     <section>
-      <Header
-        loggedIn={loggedIn}
-        handleLoggedInClick={handleLoggedInClick}
-      />
-      <Content 
-        loggedIn={loggedIn}
+      <CoinTossCounter 
+        results={results}
+        setResults={setResults}
+        counts={counts}
+        setCounts={setCounts} 
       />
     </section>
   );
