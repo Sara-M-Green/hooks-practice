@@ -1,18 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css';
-import CoinTossCounter from './CoinTossCounter'
+import SubscriberForm from './SubscriberForm'
 
 function App() {
-  const [results, setResults] = useState([])
-  const [counts, setCounts ] = useState({ H: 0, T: 0})
   return (
     <section>
-      <CoinTossCounter 
-        results={results}
-        setResults={setResults}
-        counts={counts}
-        setCounts={setCounts} 
-      />
+      <SubscriberForm />
     </section>
   );
 }
